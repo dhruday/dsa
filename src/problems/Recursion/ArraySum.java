@@ -1,16 +1,21 @@
-package problems.Recursion;
+package Recursion;
+
+import java.util.Arrays;
 
 public class ArraySum {
-    public static int sumArray(int[] numArray, int length) {
-        if(length == 0) {
+    public static void main(String[] args) {
+      int[] arr =  {1,2, 3, 4};
+      System.out.println(arrSum(arr));
+    }
+
+    private static int arrSum(int[] arr) {
+        if(arr.length == 0 ) {
             return 0;
-        } else {
-           return numArray[length-1] + sumArray(numArray, length-1);
+        } else if(arr.length == 1) {
+            return arr[0];
+        }else {
+            int sum = arr[0] + arrSum(Arrays.copyOfRange(arr, 1, arr.length));
+            return sum;
         }
     }
-    
-  public static void main(String[] args) {
-      int[] sumArrayEl= {1, 2, 3, 4};
-      System.out.println(sumArray(sumArrayEl, sumArrayEl.length));
-  }  
 }
