@@ -1,4 +1,4 @@
-package Recursion;
+package problems.Recursion;
 
 public class Factorial {
     public static void main(String[] args) {
